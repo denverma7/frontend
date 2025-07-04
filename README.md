@@ -133,4 +133,4 @@ MIT
 
 ## Author
 
-- DenverAnthony (https://github.com/Denverma7)
+- Denver Anthony ((https://github.com/Denverma7)
