@@ -1,12 +1,136 @@
-# React + Vite
+# MERN To-Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and modern To-Do application built with the MERN stack (MongoDB, Express, React, Node.js). This app allows users to register, log in, and manage their personal tasks with status and priority features.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User registration and authentication (JWT)
+- Add, update, and delete tasks
+- Mark tasks as completed or pending
+- Set task priority (low, medium, high)
+- Filter tasks by status and priority
+- Responsive UI with Tailwind CSS
 
-## Expanding the ESLint configuration
+## Folder Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+todo_app/
+  backend/    # Node.js + Express + MongoDB API
+  frontend/   # React client
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm or yarn
+- MongoDB (local or Atlas)
+
+---
+
+### 1. Clone the repository
+
+```sh
+git clone https://github.com/yourusername/todo_app.git
+cd todo_app
+```
+
+---
+
+### 2. Setup the Backend
+
+```sh
+cd backend
+npm install
+```
+
+Create a `.env` file in the `backend` folder:
+
+```
+MONGO_URI=mongodb://localhost:27017/tododb
+PORT=8080
+```
+
+Start the backend server:
+
+```sh
+npm start
+```
+
+---
+
+### 3. Setup the Frontend
+
+```sh
+cd ../frontend
+npm install
+```
+
+Start the frontend development server:
+
+```sh
+npm run dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## API Endpoints
+
+- `POST /register` — Register a new user
+- `POST /login` — Login and receive JWT token
+- `GET /tasks` — Get all tasks for the logged-in user
+- `POST /tasks` — Add a new task
+- `PATCH /tasks/:id/status` — Update task status
+- `PATCH /tasks/:id/priority` — Update task priority
+- `DELETE /tasks/:id` — Delete a task
+
+All `/tasks` endpoints require an `Authorization: Bearer <token>` header.
+
+---
+
+## Environment Variables
+
+Backend `.env` example:
+
+```
+MONGO_URI=mongodb://localhost:27017/tododb
+PORT=8080
+```
+
+---
+
+## Technologies Used
+
+- **Frontend:** React, React Router, Tailwind CSS, Vite
+- **Backend:** Node.js, Express, Mongoose, JWT, bcryptjs
+- **Database:** MongoDB
+
+---
+
+## Troubleshooting
+
+- **MongoDB connection errors:**  
+  Ensure your `MONGO_URI` is correct and MongoDB is running.
+
+- **CORS issues:**  
+  The backend is configured to allow all origins for development.
+
+- **Vite HMR/WebSocket errors:**  
+  Restart the frontend dev server. Check firewall and port 5173.
+
+---
+
+## License
+
+MIT
+
+---
+
+## Author
+
+-
