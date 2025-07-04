@@ -14,7 +14,8 @@ export default function Signup(){
         setAuthError("");
         setSuccess(false);
 
-        const response = await fetch("http://localhost:8080/register" , {
+        // const response = await fetch("http://localhost:8080/register" , {
+        const response = await fetch("to-do-backend-git-main-denverma7-gmailcoms-projects.vercel.app/register" , {
             method: "POST",
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify({username, password}),
